@@ -1,3 +1,4 @@
+; Shellcode purpose - Download, chmod and execute a file
 ; This shellcode is a morphed version of a shellcode taken from shell-storm.org
 ; OG Shellcode - http://shell-storm.org/shellcode/files/shellcode-862.php
 

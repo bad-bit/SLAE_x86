@@ -1,6 +1,6 @@
 # SLAE-x86
 
-This repository contains code written to complete the assignments for the Linux Assembly Expert x86 certifciation from SecurityTube.
+This repository contains code written to complete the assignments for the Linux Assembly Expert x86 certifciation exam.
 Link to blog - [badbit.vc (SLAE-x86)](https://badbit.vc/index.php/category/blog/slae-x86/)
 
 ## Assignments
